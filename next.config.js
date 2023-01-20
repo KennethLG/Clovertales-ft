@@ -4,14 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: process.env.AWS_CDN || "",
-        port: "",
-        pathname: "/",
-      },
-    ],
+    domains: [`${process.env.NEXT_PUBLIC_AWS_CDN}`.replace("https://", "")],
   },
 };
 

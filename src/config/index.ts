@@ -1,5 +1,5 @@
 export const config = {
   aws: {
-    cdn: `${process.env.AWS_CDN}/resources`,
+    cdn: `${process.env.NEXT_PUBLIC_AWS_CDN}/resources`,
   },
 };
