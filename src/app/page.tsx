@@ -11,8 +11,8 @@ export default function Home() {
         src={`${config.aws.cdn}/home/banner.png`}
         alt="Picture of the author"
         className="h-auto w-full"
-        width={200}
-        height={200}
+        width={500}
+        height={500}
       />
     </main>
   );
