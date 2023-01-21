@@ -1,29 +1,26 @@
 "use client";
-
-import styles from "./page.module.css";
 import Image from "next/image";
 import { config } from "@/config";
+import { Banner } from "@/components/Home/Banner";
+import { Platforms } from "@/components/Home/Platforms";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className="relative">
-        <Image
-          src={`${config.aws.cdn}/home/banner.png`}
-          alt="SearchingLight banner"
-          className="h-auto w-full"
-          width={500}
-          height={500}
-        />
+    <main className="min-h-screen w-full">
+      <Banner />
 
-        <Image
-          src={`${config.aws.cdn}/home/white-logo.png`}
-          alt="SearchingLight banner"
-          className="h-auto w-3/5 absolute top-0 left-0 right-0 bottom-0 m-auto drop-shadow-2xl"
-          width={500}
-          height={500}
+      <div className="p-5 flex justify-center">
+        <iframe
+          className="max-w-5xl w-full"
+          height={600}
+          src="https://www.youtube.com/embed/UAO2urG23S4"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
         />
       </div>
+
+      <Platforms />
     </main>
   );
 }

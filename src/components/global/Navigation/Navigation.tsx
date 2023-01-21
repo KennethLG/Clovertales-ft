@@ -2,20 +2,21 @@
 
 import { config } from "@/config";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Navigation = () => {
   const tabs = [
     {
-      name: "Home",
-      link: "/",
+      name: "Blog",
+      link: "/blog",
     },
     {
-      name: "About Us",
-      link: "/",
+      name: "Games",
+      link: "/games",
     },
     {
-      name: "Contact Us",
-      link: "/",
+      name: "Team",
+      link: "/team",
     },
   ];
 
@@ -31,16 +32,16 @@ export const Navigation = () => {
         />
         <div className="text-2xl font-bold ml-2">Clover Story</div>
       </div>
-      <div className="flex flex-row items-center">
+      <ul className="flex flex-row items-center">
         {tabs.map((tab) => (
-          <div
+          <li
             key={tab.name}
             className="text-lg font-bold mr-2 cursor-pointer hover:text-fuchsia-500 transition delay-75 duration-100"
           >
-            {tab.name}
-          </div>
+            <Link href={tab.link}>{tab.name}</Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
