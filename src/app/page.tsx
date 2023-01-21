@@ -12,7 +12,7 @@ export default function Home() {
       <div className="p-5 flex justify-center">
         <iframe
           className="max-w-5xl w-full"
-          height={600}
+          height={400}
           src="https://www.youtube.com/embed/UAO2urG23S4"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
