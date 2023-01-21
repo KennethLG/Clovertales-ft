@@ -8,14 +8,16 @@ type PlatformCardProps = {
 
 export const PlatformCard = ({ platform, iconName }: PlatformCardProps) => {
   return (
-    <div className="bg-fuchsia-900 flex">
-      <Image
-        src={`${config.aws.cdn}/icons/${iconName}.png`}
-        width={100}
-        height={100}
-        alt={`${platform} icon`}
-      />
-      <h1>{platform}</h1>
+    <div className="w-1/2 md:w-1/3 lg:w-1/3">
+      <div className="justify-around flex items-center p-1">
+        <Image
+          src={`${config.aws.cdn}/icons/${iconName}.png`}
+          width={80}
+          height={80}
+          alt={`${platform} icon`}
+        />
+        <h1 className="text-xl">{platform}</h1>
+      </div>
     </div>
   );
 };

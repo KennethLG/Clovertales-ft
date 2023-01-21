@@ -31,13 +31,15 @@ export const Platforms = () => {
   return (
     <div className="text-center max-w-2xl m-auto">
       <h1 className="text-5xl">Start NOW!</h1>
-      {platforms.map((platform) => (
-        <PlatformCard
-          platform={platform.name}
-          iconName={platform.iconName}
-          key={platform.name}
-        />
-      ))}
+      <div className="flex flex-wrap justify-center">
+        {platforms.map((platform) => (
+          <PlatformCard
+            platform={platform.name}
+            iconName={platform.iconName}
+            key={platform.name}
+          />
+        ))}
+      </div>
     </div>
   );
 };
