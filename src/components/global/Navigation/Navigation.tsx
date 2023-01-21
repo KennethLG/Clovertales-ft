@@ -30,13 +30,13 @@ export const Navigation = () => {
           className="rounded-full"
           alt="SearchingLight icon"
         />
-        <div className="text-2xl font-bold ml-2">Clover Story</div>
+        <div className="text-lg md:text-2xl font-bold ml-2">Clover Story</div>
       </div>
       <ul className="flex flex-row items-center">
         {tabs.map((tab) => (
           <li
             key={tab.name}
-            className="text-lg font-bold mr-2 cursor-pointer hover:text-fuchsia-500 transition delay-75 duration-100"
+            className="text-base font-bold mr-2 cursor-pointer hover:text-fuchsia-500 transition delay-75 duration-100"
           >
             <Link href={tab.link}>{tab.name}</Link>
           </li>
