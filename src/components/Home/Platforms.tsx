@@ -29,8 +29,8 @@ export const Platforms = () => {
     },
   ];
   return (
-    <div className="text-center max-w-2xl m-auto">
-      <h1 className="text-5xl">Start NOW!</h1>
+    <div className="text-center max-w-2xl m-auto my-16">
+      <h1 className="text-5xl my-4">Start NOW!</h1>
       <div className="flex flex-wrap justify-center">
         {platforms.map((platform) => (
           <PlatformCard
