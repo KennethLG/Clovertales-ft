@@ -3,6 +3,7 @@ import Image from "next/image";
 import { config } from "@/config";
 import { Banner } from "@/components/Home/Banner";
 import { Platforms } from "@/components/Home/Platforms";
+import { LastPosts } from "@/components/Home/LastPosts";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       </div>
 
       <Platforms />
+
+      <LastPosts />
     </main>
   );
 }
