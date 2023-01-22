@@ -16,20 +16,20 @@ export const Card = ({
 }: CardProps) => {
   return (
     <div
-      className={classNames("flex items-center my-2", {
+      className={classNames("flex items-center my-10", {
         "flex-row-reverse": reverse,
       })}
     >
       <Image
-        src={`https://picsum.photos/300/200`}
-        alt="xd"
+        src={imageUrl}
+        alt={`${title} image`}
         width={300}
         height={200}
-        className="w-2/5 rounded-md"
+        className="w-3/6 rounded-md"
       />
-      <div className="w-3/5">
+      <div className="w-3/6 p-3">
         <h1 className="text-xl">{title.toUpperCase()}</h1>
-        <p>{description}</p>
+        <p className="text-xs text-justify">{description}</p>
       </div>
     </div>
   );

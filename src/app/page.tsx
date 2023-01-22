@@ -1,15 +1,14 @@
 "use client";
-import Image from "next/image";
-import { config } from "@/config";
 import { Banner } from "@/components/Home/Banner";
 import { Platforms } from "@/components/Home/Platforms";
 import { LastPosts } from "@/components/Home/LastPosts";
+import { About } from "@/components/Home/About";
 
 export default function Home() {
   return (
     <main className="min-h-screen w-full">
       <Banner />
-
+      <About />
       <div className="p-5 flex justify-center">
         <iframe
           className="max-w-5xl w-full"
@@ -20,10 +19,8 @@ export default function Home() {
           allowFullScreen
         />
       </div>
-
-      <Platforms />
-
       <LastPosts />
+      <Platforms />
     </main>
   );
 }
