@@ -23,9 +23,9 @@ export const Footer = () => {
         <p className="text-center text-sm">
           &copy; {new Date().getFullYear()} Clover Story
         </p>
-        <p className="text-center text-sm">
+        <div className="text-center text-sm">
           <a href="mailto:contact@cloverstory.com">contact@cloverstory.com</a>
-        </p>
+        </div>
       </div>
     </footer>
   );

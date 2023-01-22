@@ -10,24 +10,24 @@ export const SocialList = () => {
       Icon: FaFacebook,
     },
     {
-      link: "https://twitter.com/CloverStoryFT",
+      link: "https://twitter.com/CloverStoryFT2",
       Icon: FaTwitter,
     },
     {
-      link: "https://twitter.com/CloverStoryFT",
+      link: "https://twitter.com/CloverStoryFT3",
       Icon: FaYoutube,
     },
     {
-      link: "https://twitter.com/CloverStoryFT",
+      link: "https://twitter.com/CloverStoryFT4",
       Icon: FaInstagram,
     },
   ];
 
   return (
-    <ul className="flex items-center">
+    <div className="flex items-center">
       {social.map((item) => (
         <SocialItem key={item.link} link={item.link} Icon={item.Icon} />
       ))}
-    </ul>
+    </div>
   );
 };
