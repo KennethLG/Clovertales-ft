@@ -13,7 +13,7 @@ export const PlatformCard = ({ name, iconName, link }: PlatformCardProps) => {
       target="_blank"
       href={link}
       rel="noopener noreferrer"
-      className="w-1/2 md:w-1/3 lg:w-1/3"
+      className="w-1/2 md:w-1/3 lg:w-1/3 hover:text-fuchsia-400"
     >
       <div className="justify-around flex items-center p-1">
         <Image
