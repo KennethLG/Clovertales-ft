@@ -33,11 +33,7 @@ export const Platforms = () => {
       <h1 className="text-5xl my-4">Start NOW!</h1>
       <div className="flex flex-wrap justify-center">
         {platforms.map((platform) => (
-          <PlatformCard
-            platform={platform.name}
-            iconName={platform.iconName}
-            key={platform.name}
-          />
+          <PlatformCard {...platform} key={platform.name} />
         ))}
       </div>
     </div>
