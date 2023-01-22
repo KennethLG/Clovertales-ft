@@ -14,6 +14,8 @@ export const BurgerMenu = ({ list, open }: BurgerMenuProps) => {
         {
           "bg-transparent": !open,
           "bg-white/90": open,
+          "pointer-events-none": !open,
+          "pointer-events-auto": open,
         }
       )}
     >
