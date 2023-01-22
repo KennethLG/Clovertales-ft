@@ -32,8 +32,8 @@ export const Navigation = () => {
 
   return (
     <>
-      <div className="flex flex-row justify-evenly items-center p-2 bg-fuchsia-900/50 fixed w-full backdrop-blur-sm z-30">
-        <div className="flex flex-row items-center">
+      <div className="flex flex-row justify-evenly items-center p-2 bg-fuchsia-900/50 fixed top-0 w-full backdrop-blur-sm z-30 ">
+        <Link href="/" className="flex flex-row items-center">
           <Image
             src={`${config.aws.cdn}/icon.png`}
             width={50}
@@ -42,7 +42,7 @@ export const Navigation = () => {
             alt="SearchingLight icon"
           />
           <div className="text-lg md:text-2xl font-bold ml-2">Clover Story</div>
-        </div>
+        </Link>
         <ul className="hidden md:flex flex-row items-center">
           {tabs.map((tab) => (
             <li
