@@ -24,6 +24,10 @@ export const Navigation = () => {
       name: "Team",
       link: "/team",
     },
+    {
+      name: "Contact",
+      link: "/contact",
+    },
   ];
 
   return (

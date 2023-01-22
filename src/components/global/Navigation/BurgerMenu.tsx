@@ -10,10 +10,10 @@ export const BurgerMenu = ({ list, open }: BurgerMenuProps) => {
   return (
     <div
       className={classNames(
-        "w-screen h-screen top-0 right-0 bg-white/75 text-black justify-center items-center flex flex-col z-40",
+        "w-screen h-screen top-0 right-0 text-black justify-center items-center fixed flex flex-col z-40 transition-all duration-300 ease-in-out",
         {
-          fixed: open,
-          hidden: !open,
+          "bg-transparent": !open,
+          "bg-white/90": open,
         }
       )}
     >
@@ -21,7 +21,13 @@ export const BurgerMenu = ({ list, open }: BurgerMenuProps) => {
         <Link
           href={link}
           key={name}
-          className="text-3xl text-slate-900 font-semibold my-2"
+          className={classNames(
+            "text-3xl font-semibold my-2 transition-all duration-300 ease-in-out",
+            {
+              "text-slate-900": open,
+              "text-transparent": !open,
+            }
+          )}
         >
           {name}
         </Link>
