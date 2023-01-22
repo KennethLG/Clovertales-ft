@@ -33,7 +33,7 @@ const Contact = () => {
         commodo consequat.
       </p>
 
-      <form className="w-2/5 my-5 flex flex-col">
+      <form className="w-4/5 md:w-2/5 my-5 flex flex-col">
         <Input
           label="Email"
           name="email"
