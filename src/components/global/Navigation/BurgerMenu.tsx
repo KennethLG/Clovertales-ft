@@ -1,12 +1,14 @@
 import classNames from "classnames";
 import Link from "next/link";
+import { Dispatch, SetStateAction } from "react";
 
 type BurgerMenuProps = {
   list: Array<{ name: string; link: string }>;
   open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-export const BurgerMenu = ({ list, open }: BurgerMenuProps) => {
+export const BurgerMenu = ({ list, open, setOpen }: BurgerMenuProps) => {
   return (
     <div
       className={classNames(
@@ -23,6 +25,7 @@ export const BurgerMenu = ({ list, open }: BurgerMenuProps) => {
         <Link
           href={link}
           key={name}
+          onClick={() => setOpen(false)}
           className={classNames(
             "text-3xl font-semibold my-2 transition-all duration-300 ease-in-out",
             {

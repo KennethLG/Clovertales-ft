@@ -71,7 +71,7 @@ export const Navigation = () => {
           }}
         />
       </a>
-      <BurgerMenu list={tabs} open={open} />
+      <BurgerMenu list={tabs} open={open} setOpen={setOpen} />
     </>
   );
 };
