@@ -1,9 +1,6 @@
-import { config } from "@/config";
-import Image from "next/image";
-
 export const About = () => {
   return (
-    <section className="text-center w-11/12 md:w-3/5 m-auto my-20">
+    <section className="text-center w-full m-auto my-20">
       <h1 className="text-5xl"> Don&apos;t be afraid! </h1>
       <h1 className="text-5xl"> We are also monsters. </h1>
 

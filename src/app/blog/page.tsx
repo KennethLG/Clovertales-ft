@@ -12,6 +12,7 @@ const Blog = () => {
         alt="Searching Light snow background"
         width={500}
         height={500}
+        loading="lazy"
         className="h-auto w-full md:w-3/5 m-auto rounded-2xl"
       />
 

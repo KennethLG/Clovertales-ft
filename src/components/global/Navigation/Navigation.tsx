@@ -17,10 +17,6 @@ export const Navigation = () => {
       link: "/blog",
     },
     {
-      name: "Searching Light",
-      link: "/searchinglight",
-    },
-    {
       name: "Team",
       link: "/team",
     },
