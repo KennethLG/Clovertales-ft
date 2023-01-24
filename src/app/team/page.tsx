@@ -3,7 +3,7 @@ import { MemberCard } from "./Member";
 
 const Team = () => {
   return (
-    <section className="w-11/12 md:max-w-3xl m-auto mt-32 text-center">
+    <section className="w-11/12 md:max-w-3xl m-auto my-32 text-center">
       <h1 className="text-5xl">We are not mundane</h1>
       <p className="my-3">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
