@@ -19,8 +19,8 @@ export default function Home() {
           allowFullScreen
         />
       </div>
-      <LastPosts />
       <Platforms />
+      <LastPosts />
     </main>
   );
 }

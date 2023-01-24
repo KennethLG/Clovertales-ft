@@ -7,7 +7,7 @@ type MemberProps = {
 
 export const MemberCard = ({ member }: MemberProps) => {
   return (
-    <div className="p-3 text-center">
+    <div className="w-full p-3 text-center flex flex-col items-center">
       <Image
         src={member.photo}
         alt={`${member.name} photo`}
