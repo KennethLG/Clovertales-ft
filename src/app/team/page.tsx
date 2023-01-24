@@ -1,7 +1,18 @@
-import { team } from "@/mocks/team";
+import { config } from "@/config";
+import { Member } from "@/domain/team/member";
+import { APIResponse } from "@/helpers/http";
 import { MemberCard } from "./Member";
 
-const Team = () => {
+const fetchTeam = async () => {
+  const response = await fetch(`${config.aws.api}/members`, {
+    cache: "force-cache",
+  });
+  return response.json();
+};
+
+const Team = async () => {
+  const team = await fetchTeam();
+
   return (
     <section className="w-11/12 md:max-w-3xl m-auto my-32 text-center">
       <h1 className="text-5xl">We are not mundane</h1>
@@ -11,7 +22,7 @@ const Team = () => {
       </p>
 
       <div className="flex flex-col md:flex-row">
-        {team.map((member) => (
+        {team.data.map((member: Member) => (
           <MemberCard key={member.name} member={member} />
         ))}
       </div>
