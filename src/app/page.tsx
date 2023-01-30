@@ -1,10 +1,20 @@
-"use client";
 import { Banner } from "@/components/Home/Banner";
 import { Platforms } from "@/components/Home/Platforms";
 import { About } from "@/components/Home/About";
 import { Gallery } from "@/components/Home/Gallery";
+import { config } from "@/config";
+import { GetStaticProps } from "next";
+import { Platform } from "@/domain/platform";
 
-export default function Home() {
+const fetchPlatforms = async () => {
+  const response = await fetch(`${config.aws.api}/platforms`);
+  const platforms = await response.json();
+  return platforms.data as Platform[];
+};
+
+export default async function Page() {
+  const platforms = await fetchPlatforms();
+
   return (
     <main className="min-h-screen w-full">
       <Banner />
@@ -21,7 +31,7 @@ export default function Home() {
             allowFullScreen
           />
         </div>
-        <Platforms />
+        {platforms && <Platforms platforms={platforms} />}
         <Gallery />
       </div>
     </main>

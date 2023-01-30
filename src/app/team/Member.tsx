@@ -1,5 +1,5 @@
 import { config } from "@/config";
-import { Member } from "@/domain/team/member";
+import { Member } from "@/domain/member";
 import Image from "next/image";
 
 type MemberProps = {

@@ -1,6 +1,5 @@
 import { config } from "@/config";
-import { Member } from "@/domain/team/member";
-import { APIResponse } from "@/helpers/http";
+import { Member } from "@/domain/member";
 import { MemberCard } from "./Member";
 
 const fetchTeam = async () => {
