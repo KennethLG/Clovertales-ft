@@ -13,6 +13,10 @@ export const Navigation = () => {
 
   const tabs = [
     {
+      name: "Home",
+      link: "/",
+    },
+    {
       name: "Blog",
       link: "/blog",
     },
