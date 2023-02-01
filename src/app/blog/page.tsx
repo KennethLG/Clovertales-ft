@@ -10,9 +10,8 @@ const Blog = () => {
       <Image
         src={`${config.aws.cdn}/snowBg.png`}
         alt="Searching Light snow background"
-        width={500}
-        height={500}
-        loading="lazy"
+        width={200}
+        height={200}
         className="h-auto w-full md:w-3/5 m-auto rounded-2xl"
       />
 
