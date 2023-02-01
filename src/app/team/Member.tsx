@@ -8,7 +8,7 @@ type MemberProps = {
 
 export const MemberCard = ({ member }: MemberProps) => {
   return (
-    <div className="w-full p-3 text-center flex flex-col items-center">
+    <div className="w-3/6 md:w-1/4 p-3 text-center flex flex-col items-center">
       <Image
         src={`${config.aws.cdn}/team/member-${member.id}.jpeg`}
         alt={`${member.name} photo`}

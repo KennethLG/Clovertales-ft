@@ -20,7 +20,7 @@ const Team = async () => {
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
 
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-wrap">
         {team.data.map((member: Member) => (
           <MemberCard key={member.name} member={member} />
         ))}
