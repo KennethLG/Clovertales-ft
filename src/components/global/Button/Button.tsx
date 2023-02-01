@@ -1,6 +1,8 @@
+import { FormEventHandler } from "react";
+
 type ButtonProps = {
   onClick?: () => void;
-  onSubmit?: () => void;
+  onSubmit?: FormEventHandler<HTMLButtonElement>;
   type?: "button" | "submit";
   children?: React.ReactNode;
 };

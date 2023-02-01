@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/global/Button/Button";
 import { Input } from "@/components/global/Input/Input";
-import { useState } from "react";
+import { config } from "@/config";
+import React, { useState } from "react";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -19,8 +20,20 @@ const Contact = () => {
     });
   };
 
-  const onSubmit = () => {
-    console.log(form);
+  const onSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    const response = await fetch(`${config.aws.api}/sendMail`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const result = await response.json();
+
+    console.log(result);
   };
 
   return (
@@ -33,7 +46,7 @@ const Contact = () => {
         commodo consequat.
       </p>
 
-      <form className="w-4/5 md:w-2/5 my-5 flex flex-col">
+      <form className="w-4/5 md:w-2/5 my-5 flex flex-col" onSubmit={onSubmit}>
         <Input
           label="Email"
           name="email"
@@ -51,7 +64,7 @@ const Contact = () => {
           value={form.message}
         />
 
-        <Button>SEND</Button>
+        <Button type="submit">SEND</Button>
       </form>
     </section>
   );
