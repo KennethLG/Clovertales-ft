@@ -14,17 +14,17 @@ export const Footer = () => {
             className="rounded-full"
             alt="SearchingLight icon"
           />
-          <h1 className="text-lg">Clover Story</h1>
+          <h1 className="text-lg">Clover Tales</h1>
         </div>
         <SocialList />
       </div>
 
       <div>
         <p className="text-center text-sm">
-          &copy; {new Date().getFullYear()} Clover Story
+          &copy; {new Date().getFullYear()} Clover Tales
         </p>
         <div className="text-center text-sm">
-          <a href="mailto:contact@cloverstory.com">contact@cloverstory.com</a>
+          <a href="mailto:contact@cloverstory.com">contact@clovertales.com</a>
         </div>
       </div>
     </footer>

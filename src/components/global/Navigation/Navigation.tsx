@@ -41,7 +41,7 @@ export const Navigation = () => {
             className="rounded-full"
             alt="SearchingLight icon"
           />
-          <div className="text-lg md:text-2xl font-bold ml-2">Clover Story</div>
+          <div className="text-lg md:text-2xl font-bold ml-2">Clover Tales</div>
         </Link>
         <ul className="hidden md:flex flex-row items-center">
           {tabs.map((tab) => (
