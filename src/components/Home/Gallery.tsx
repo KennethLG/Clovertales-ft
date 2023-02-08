@@ -3,8 +3,6 @@ import { gallery } from "@/mocks/gallery";
 import Image from "next/image";
 
 export const Gallery = () => {
-  const galleryLength = 10;
-
   return (
     <div className="flex flex-wrap">
       {gallery.map((item) => (
@@ -14,7 +12,7 @@ export const Gallery = () => {
             src={`${config.aws.cdn}/gallery/sl${item.id}.png`}
             width={300}
             height={200}
-            className="w-full rounded"
+            className="w-full"
           />
         </div>
       ))}
