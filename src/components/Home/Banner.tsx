@@ -8,8 +8,8 @@ export const Banner = () => {
         src={`${config.aws.cdn}/home/banner.png`}
         alt="SearchingLight banner"
         className="h-auto w-full"
-        width={500}
-        height={500}
+        width={600}
+        height={600}
       />
 
       <Image

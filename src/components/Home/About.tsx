@@ -5,13 +5,16 @@ export const About = () => {
       <h1 className="text-5xl"> We are also monsters. </h1>
 
       <p className="mt-10">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        Get ready to cross the threshold into two parallel universes, where
+        reality is twisted and danger lurks around every corner. In this indie
+        video game, you&apos;ll guide a child as they navigate through two
+        distinct parallel worlds, each filled with mind-bending puzzles and
+        fearsome monsters. With a mesmerizing blend of vibrant visuals and a
+        haunting soundtrack, this adventure game will draw you in as you explore
+        the mysteries of these parallel realms and uncover the secrets they
+        hold. So sharpen your wits and steady your nerves, as you embark on a
+        journey to the very edge of existence and beyond in this unforgettable
+        puzzle and adventure game
       </p>
     </section>
   );
