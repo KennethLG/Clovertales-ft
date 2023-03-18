@@ -4,6 +4,8 @@ import { About } from "@/components/Home/About";
 import { config } from "@/config";
 import { Platform } from "@/domain/platform";
 import { SearchingLightGeneralDescription } from "@/components/Overview/Overview";
+import { Gallery } from "@/components/Home/Gallery";
+import { gallery } from "@/mocks/gallery";
 
 const fetchPlatforms = async () => {
   const response = await fetch(`${config.aws.api}/platforms`);
@@ -21,6 +23,7 @@ export default async function Page() {
       <div className="max-w-2xl m-auto p-3">
         <About />
         <SearchingLightGeneralDescription />
+        <Gallery images={gallery}/>
         {platforms && <Platforms platforms={platforms} />}
       </div>
     </main>

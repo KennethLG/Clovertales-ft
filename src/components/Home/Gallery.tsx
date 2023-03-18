@@ -1,18 +1,20 @@
-import { config } from "@/config";
-import { gallery } from "@/mocks/gallery";
-import Image from "next/image";
+import { Image } from "../global/Image/Image";
 
-export const Gallery = () => {
+interface GalleryProps {
+  images: string[];
+}
+
+export const Gallery = ({ images }: GalleryProps) => {
   return (
     <div className="flex flex-wrap">
-      {gallery.map((item) => (
-        <div key={item.id} className="w-3/6 p-2">
+      {images.map((image, i) => (
+        <div key={i} className="w-2/6 p-1">
           <Image
-            alt={"Videogame image"}
-            src={`${config.aws.cdn}/gallery/sl${item.id}.png`}
+            alt={`Searching Light image-${i}`}
+            src={image}
             width={300}
             height={200}
-            className="w-full"
+            className="w-full rounded-lg"
           />
         </div>
       ))}

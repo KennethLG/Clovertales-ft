@@ -1,32 +1,7 @@
+import { config } from "@/config";
+
 export const gallery = [
-  {
-    id: "1",
-  },
-  {
-    id: "2",
-  },
-  {
-    id: "3",
-  },
-  {
-    id: "4",
-  },
-  {
-    id: "5",
-  },
-  {
-    id: "6",
-  },
-  {
-    id: "7",
-  },
-  {
-    id: "8",
-  },
-  {
-    id: "9",
-  },
-  {
-    id: "10",
-  },
+  `${config.aws.cdn}/gallery/sl2.png`,
+  `${config.aws.cdn}/gallery/sl1.png`,
+  `${config.aws.cdn}/gallery/sl3.png`
 ];
