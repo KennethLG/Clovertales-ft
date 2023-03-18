@@ -17,8 +17,12 @@ export const Navigation = () => {
       link: "/",
     },
     {
-      name: "Blog",
-      link: "/blog",
+      name: "Overview",
+      link: "/overview",
+    },
+    {
+      name: "News",
+      link: "/news",
     },
     {
       name: "Team",
@@ -47,7 +51,7 @@ export const Navigation = () => {
           {tabs.map((tab) => (
             <li
               key={tab.name}
-              className="text-base mx-5 font-bold cursor-pointer hover:text-fuchsia-500 transition delay-75 duration-100"
+              className="text-base mx-3 font-bold cursor-pointer hover:text-fuchsia-500 transition delay-75 duration-100"
             >
               <Link href={tab.link}>{tab.name}</Link>
             </li>
