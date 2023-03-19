@@ -1,9 +1,9 @@
 "use client"
 
+import useImagePopup from "@/hooks/useImagePopup";
 import classNames from "classnames";
 import Image from "next/image";
 import { ImagePopup } from "../Image/ImagePopup";
-import { useImagePopup } from "../../../hooks/useImagePopup";
 
 type CardProps = {
   title: string;
