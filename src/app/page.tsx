@@ -20,7 +20,7 @@ export default async function Page() {
     <>
       <About />
       <SearchingLightGeneralDescription />
-      <Gallery images={gallery} />
+      <Gallery images={gallery.slice(0, 3)} />
       {platforms && <Platforms platforms={platforms} />}
     </>
   );
