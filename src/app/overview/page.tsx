@@ -5,7 +5,6 @@ import { cards } from "./data";
 
 const Overview = () => {
 
-
   return (
     <>
       <SearchingLightGeneralDescription />
