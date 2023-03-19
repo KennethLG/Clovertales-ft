@@ -10,7 +10,7 @@ export const SearchingLightGeneralDescription = () => {
         width={300}
         height={300}
         loading="lazy"
-        className="h-auto w-2/5 m-auto rounded-2xl"
+        className="h-auto w-2/5 m-auto"
       />
 
       <p className="mt-10 text-center">

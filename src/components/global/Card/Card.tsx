@@ -2,7 +2,7 @@
 
 import useImagePopup from "@/hooks/useImagePopup";
 import classNames from "classnames";
-import Image from "next/image";
+import { Image } from "../Image/Image";
 import { ImagePopup } from "../Image/ImagePopup";
 
 type CardProps = {
@@ -32,7 +32,6 @@ export const Card = ({
         alt={`${title} image`}
         width={300}
         height={200}
-        className="w-3/6 rounded-md"
         onClick={() => openPopup(imageUrl, `${title} image`)}
       />
       <div className="w-3/6 p-3">

@@ -4,12 +4,12 @@ import NextImage, { ImageProps } from "next/image";
 export const Image = (props: ImageProps) => {
   return (
     <div
-      className={classNames("w-full", {
+      className={classNames({
         "cursor-pointer transform hover:-translate-y-2 transition duration-300":
           props.onClick !== undefined,
       })}
     >
-      <NextImage {...props} />
+      <NextImage {...props} className={classNames("rounded-md", props.className)} />
     </div>
   );
 };

@@ -21,7 +21,6 @@ export const Gallery = ({ images }: GalleryProps) => {
             src={image.imageUrl}
             width={300}
             height={200}
-            className="w-full rounded-lg"
             onClick={() => openPopup(image.imageUrl, `Gallery Image ${i}`)}
           />
         </div>
