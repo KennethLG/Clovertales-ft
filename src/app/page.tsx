@@ -4,8 +4,7 @@ import { About } from "@/components/Home/About";
 import { config } from "@/config";
 import { Platform } from "@/domain/platform";
 import { SearchingLightGeneralDescription } from "@/components/Overview/Overview";
-import { Gallery } from "@/components/global/Gallery/Gallery";
-import { gameplayGallery } from "@/mocks/gallery";
+import { Preview } from "@/components/Home/Preview";
 
 const fetchPlatforms = async () => {
   const response = await fetch(`${config.aws.api}/platforms`);
@@ -20,7 +19,7 @@ export default async function Page() {
     <>
       <About />
       <SearchingLightGeneralDescription />
-      <Gallery images={gameplayGallery.slice(0, 3)} />
+      <Preview />
       {platforms && <Platforms platforms={platforms} />}
     </>
   );
