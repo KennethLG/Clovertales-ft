@@ -5,22 +5,21 @@ import { Card } from "@/components/global/Card/Card";
 
 const Blog = () => {
   return (
-    <section className="w-11/12 md:max-w-3xl m-auto mt-32">
-      <h1 className="text-5xl my-4 text-center">Blog</h1>
+    <section>
+      <h1 className="text-5xl text-center">Updates and News</h1>
       <Image
         src={`${config.aws.cdn}/snowBg-small.png`}
         alt="Searching Light snow background"
         width={200}
         height={200}
         loading="lazy"
-        className="h-auto w-full md:w-4/5 m-auto rounded-2xl"
+        className="h-auto w-full mt-4 md:w-4/5 m-auto rounded-2xl"
       />
 
       <p className="mt-10 text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor
-        sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua.
+        Stay informed about the latest developments in the game&apos;s
+        development, news about the plot, and exclusive previews that will leave
+        you wanting more.
       </p>
 
       {posts.map((post, i) => (
