@@ -10,7 +10,7 @@ export const Conclusion = () => {
         width={300}
         height={300}
         loading="lazy"
-        className="h-auto w-4/5 m-auto"
+        className="h-auto w-4/5 m-auto rounded-3xl"
       />
       <p className="text-center mt-5">
         Dive into the amazing universe of <strong>Searching Light</strong> and
