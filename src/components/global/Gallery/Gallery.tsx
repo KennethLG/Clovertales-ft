@@ -33,13 +33,12 @@ export const Gallery = ({ images }: GalleryProps) => {
           />
         </div>
       ))}
-      {popupImage && (
         <ImagePopup
-          src={popupImage.src}
-          alt={popupImage.alt}
+          src={popupImage?.src}
+          alt={popupImage?.alt}
           onClose={closePopup}
+          isOpen={popupImage !== null}
         />
-      )}
     </div>
   );
 };
