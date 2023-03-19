@@ -4,7 +4,7 @@ import { About } from "@/components/Home/About";
 import { config } from "@/config";
 import { Platform } from "@/domain/platform";
 import { SearchingLightGeneralDescription } from "@/components/Overview/Overview";
-import { Gallery } from "@/components/Home/Gallery";
+import { Gallery } from "@/components/global/Gallery/Gallery";
 import { gallery } from "@/mocks/gallery";
 
 const fetchPlatforms = async () => {

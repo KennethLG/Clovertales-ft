@@ -1,4 +1,4 @@
-import { Image } from "../global/Image/Image";
+import { Image } from "../Image/Image";
 
 interface GalleryProps {
   images: string[];
@@ -6,7 +6,7 @@ interface GalleryProps {
 
 export const Gallery = ({ images }: GalleryProps) => {
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap my-5">
       {images.map((image, i) => (
         <div key={i} className="w-2/6 p-1">
           <Image
