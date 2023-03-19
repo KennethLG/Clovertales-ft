@@ -37,7 +37,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center mt-28">
+    <section className="flex flex-col items-center justify-center">
       <h1 className="text-5xl">Contact</h1>
       <p className="mt-10 max-w-2xl text-center">
         We&apos;d love to hear from you! Whether you have questions, comments,
