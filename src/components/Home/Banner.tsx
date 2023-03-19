@@ -1,7 +1,17 @@
+"use client"
+
 import { config } from "@/config";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export const Banner = () => {
+
+  const path = usePathname();
+
+  if (path !== "/") {
+    return <></>;
+  }
+
   return (
     <div className="relative">
       <Image

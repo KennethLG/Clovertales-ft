@@ -17,15 +17,11 @@ export default async function Page() {
   const platforms = await fetchPlatforms();
 
   return (
-    <main className="min-h-screen w-full">
-      <Banner />
-
-      <div className="max-w-2xl m-auto p-3">
-        <About />
-        <SearchingLightGeneralDescription />
-        <Gallery images={gallery}/>
-        {platforms && <Platforms platforms={platforms} />}
-      </div>
-    </main>
+    <>
+      <About />
+      <SearchingLightGeneralDescription />
+      <Gallery images={gallery} />
+      {platforms && <Platforms platforms={platforms} />}
+    </>
   );
 }

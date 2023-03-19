@@ -1,6 +1,6 @@
 export const About = () => {
   return (
-    <section className="text-center w-full m-auto my-20">
+    <section className="text-center w-full m-auto">
       <h1 className="text-5xl"> Don&apos;t be afraid! </h1>
       <h1 className="text-5xl"> We are also monsters. </h1>
 
