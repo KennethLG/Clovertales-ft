@@ -1,7 +1,5 @@
-const Loading = () => {
-  return <h1>
-    Loading news...
-  </h1>
-}
+import LoadingCard from "@/components/global/Loaders/LoadingCard";
 
-export default Loading;
+export default function Loading() {
+  return <LoadingCard />;
+}

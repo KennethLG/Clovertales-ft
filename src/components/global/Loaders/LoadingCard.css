@@ -1,0 +1,17 @@
+/* LoadingCard.css */
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.loading-image,
+.loading-title,
+.loading-text {
+  animation: loading 1.5s infinite;
+  background: linear-gradient(90deg, #a8a8a833 25%, #dbdbdb66 50%, #a9a9a933 75%);
+  background-size: 200% 100%;
+}
