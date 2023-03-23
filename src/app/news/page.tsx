@@ -2,10 +2,13 @@ import { Suspense } from "react";
 import { PostsList } from "./PostsList";
 import Loading from "./loading";
 
-export default function News() {
+export default async function News() {
+
+  const AsyncPostsList = await PostsList();
+
   return (
     <Suspense fallback={<Loading />}>
-      <PostsList />
+      {AsyncPostsList}
     </Suspense>
   );
 }
