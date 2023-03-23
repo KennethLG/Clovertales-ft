@@ -1,19 +1,27 @@
+"use client"
+
 import { Card } from "@/components/global/Card/Card";
 import { config } from "@/config";
 import { Post } from "@/domain/post";
+import useApiRequest from "@/hooks/useResponse";
+import Loading from "./loading";
 
-const fetchPosts = async () => {
-  const response = await fetch(`${config.aws.api}/post`);
-  const posts = await response.json();
-  return posts as Post[];
-};
+export const PostsList = () => {
+  const { data, error } = useApiRequest<Post[]>({
+    url: `${config.aws.api}/post`,
+  });
 
-export const PostsList = async () => {
-  const posts = await fetchPosts();
+  if (error) {
+    return <h1>Could not load the posts</h1>
+  }
+
+  if (!data) {
+    return <Loading />
+  }
 
   return (
     <>
-      {posts.map((post, i) => (
+      {data.map((post, i) => (
         <Card
           key={i}
           title={post.title}
