@@ -1,6 +1,7 @@
 import { Footer } from "@/components/global/Footer/Footer";
 import { Navigation } from "@/components/global/Navigation/Navigation";
 import { Banner } from "@/components/Home/Banner";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 export default function RootLayout({
@@ -17,7 +18,7 @@ export default function RootLayout({
           <Banner />
           <div className="max-w-2xl p-3 m-auto my-32">{children}</div>
         </main>
-
+        <Toaster />
         <Footer />
       </body>
     </html>
