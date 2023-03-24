@@ -26,7 +26,7 @@ export default function Form({ onSubmit }: FormProps) {
 
   return (
     <>
-      <form className="w-4/5 md:w-2/5 my-5 flex flex-col" onSubmit={(event) => onSubmit(event, form)}>
+      <form className="w-4/5 md:w-7/12 my-5 flex flex-col" onSubmit={(event) => onSubmit(event, form)}>
         <Input
           label="Email"
           name="email"
