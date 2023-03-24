@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
 import useImagePopup from "@/hooks/useImagePopup";
+import { formatDate } from "@/utils/date";
 import classNames from "classnames";
 import { Image } from "../Image/Image";
 import { ImagePopup } from "../Image/ImagePopup";
@@ -9,6 +10,7 @@ type CardProps = {
   title: string;
   description: string;
   imageUrl: string;
+  date?: string;
   reverse?: boolean;
 };
 
@@ -16,9 +18,9 @@ export const Card = ({
   title,
   description,
   imageUrl,
+  date,
   reverse = false,
 }: CardProps) => {
-
   const { closePopup, openPopup, popupImage } = useImagePopup();
 
   return (
@@ -35,8 +37,9 @@ export const Card = ({
         onClick={() => openPopup(imageUrl, `${title} image`)}
       />
       <div className="w-3/6 p-3">
-        <h1 className="text-xl">{title.toUpperCase()}</h1>
+        <h1 className="text-2xl">{title.toUpperCase()}</h1>
         <p className="text-xs text-justify">{description}</p>
+        {date && <h3 className="text-xl py-3">{formatDate(date)}</h3>}
       </div>
       <ImagePopup
         src={popupImage?.src}

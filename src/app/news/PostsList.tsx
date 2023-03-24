@@ -33,6 +33,7 @@ export const PostsList = () => {
           title={post.title}
           description={post.description}
           imageUrl={post.imageUrl}
+          date={post.createdAt}
           reverse={i % 2 === 0}
         />
       ))}
