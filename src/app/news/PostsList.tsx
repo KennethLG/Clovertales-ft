@@ -1,10 +1,10 @@
 "use client"
 
 import { Card } from "@/components/global/Card/Card";
+import LoadingCard from "@/components/global/Loaders/LoadingCard";
 import { config } from "@/config";
 import { Post } from "@/domain/post";
 import useApiRequest from "@/hooks/useResponse";
-import Loading from "./loading";
 
 export const PostsList = () => {
   const { data, error } = useApiRequest<Post[]>({
@@ -16,7 +16,13 @@ export const PostsList = () => {
   }
 
   if (!data) {
-    return <Loading />
+    return (
+      <>
+        {[...Array(3).keys()].map((i) => (
+          <LoadingCard key={i} />
+        ))}
+      </>
+    );
   }
 
   return (
