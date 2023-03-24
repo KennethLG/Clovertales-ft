@@ -35,6 +35,7 @@ export const PostsList = () => {
           imageUrl={post.imageUrl}
           date={post.createdAt}
           reverse={i % 2 === 0}
+          url={`/news/${post.id}`}
         />
       ))}
     </>
