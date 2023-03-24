@@ -3,6 +3,7 @@
 import { config } from "@/config";
 import { Post as IPost } from "@/domain/post";
 import useApiRequest from "@/hooks/useResponse";
+import "./styles.css"
 
 interface PostProps {
   params: {
@@ -13,6 +14,11 @@ interface PostProps {
 export default function Post({ params }: PostProps) {
   const { data, error } = useApiRequest<IPost>({
     url: `${config.aws.api}/post?id=${params.id}`,
+    init: {
+      next: {
+        revalidate: config.time.day
+      }
+    }
   });
 
   if (error) {
