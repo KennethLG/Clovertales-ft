@@ -48,7 +48,7 @@ export const Card = ({
         height={200}
         onClick={handleImageClick}
       />
-      <LinkLayout>
+      <LinkLayout url={url}>
         <h1 className="text-2xl">{title.toUpperCase()}</h1>
         <p className="text-xs text-justify">{description}</p>
         {date && <h3 className="text-xl py-3">{formatDate(date)}</h3>}
