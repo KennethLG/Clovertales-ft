@@ -18,10 +18,10 @@ export const Gallery = ({ images }: GalleryProps) => {
         <div key={i} className="w-2/6 p-2">
           <Image
             alt={`Searching Light image-${i}`}
-            src={image.imageUrl}
+            src={image.url}
             width={300}
             height={200}
-            onClick={() => openPopup(image.imageUrl, `Gallery Image ${i}`)}
+            onClick={() => openPopup(image.url, `Gallery Image ${i}`)}
           />
         </div>
       ))}
