@@ -1,5 +1,4 @@
 import { Platform } from "@/domain/platform";
-import { platforms } from "@/mocks/platforms";
 import { PlatformCard } from "./Platform-card";
 
 interface PlatformProps {

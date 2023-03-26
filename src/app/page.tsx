@@ -1,4 +1,3 @@
-import { Banner } from "@/components/Home/Banner";
 import { Platforms } from "@/components/Home/Platforms";
 import { About } from "@/components/Home/About";
 import { config } from "@/config";
@@ -9,11 +8,12 @@ import { Preview } from "@/components/Home/Preview";
 const fetchPlatforms = async () => {
   const response = await fetch(`${config.aws.api}/platforms`);
   const platforms = await response.json();
-  return platforms.data as Platform[];
+  return platforms as Platform[];
 };
 
 export default async function Page() {
   const platforms = await fetchPlatforms();
+  console.log(platforms);
 
   return (
     <>

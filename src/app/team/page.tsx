@@ -6,7 +6,8 @@ const fetchTeam = async () => {
   const response = await fetch(`${config.aws.api}/members`, {
     cache: "force-cache",
   });
-  return response.json();
+  const team = await response.json();
+  return team;
 };
 
 const Team = async () => {
@@ -29,7 +30,7 @@ const Team = async () => {
       </p>
 
       <div className="flex flex-wrap">
-        {team.data.map((member: Member) => (
+        {team.map((member: Member) => (
           <MemberCard key={member.name} member={member} />
         ))}
       </div>
