@@ -26,7 +26,7 @@ export default async function Page() {
     <>
       <About />
       <SearchingLightGeneralDescription />
-      <Preview gallery={gallery} />
+      {gallery && <Preview gallery={gallery} />}
       {platforms && <Platforms platforms={platforms} />}
     </>
   );
