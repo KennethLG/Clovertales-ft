@@ -1,25 +1,29 @@
 "use client";
 
 import { SocialItem } from "./SocialItem";
-import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa"
 
 export const SocialList = () => {
   const social = [
     {
-      link: "https://twitter.com/CloverStoryFT",
+      link: "https://www.facebook.com/clovertalesdev",
       Icon: FaFacebook,
     },
     {
-      link: "https://twitter.com/CloverStoryFT2",
+      link: "https://twitter.com/clovertales",
       Icon: FaTwitter,
     },
     {
-      link: "https://twitter.com/CloverStoryFT3",
+      link: "https://www.youtube.com/@clovertales",
       Icon: FaYoutube,
     },
     {
-      link: "https://twitter.com/CloverStoryFT4",
-      Icon: FaInstagram,
+      link: "https://clovertales.itch.io",
+      Icon: "itchio",
+    },
+    {
+      link: "https://gamejolt.com/@CloverStory",
+      Icon: "gamejolt",
     },
   ];
 
