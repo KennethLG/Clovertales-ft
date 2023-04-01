@@ -9,6 +9,11 @@ import useApiRequest from "@/hooks/useResponse";
 export const PostsList = () => {
   const { data, error } = useApiRequest<Post[]>({
     url: `${config.aws.api}/post`,
+    init: {
+      next: {
+        revalidate: config.time.hour
+      }
+    }
   });
 
   if (error) {

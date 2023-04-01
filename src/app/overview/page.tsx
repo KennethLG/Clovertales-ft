@@ -7,7 +7,11 @@ import { config } from "@/config";
 import { cards } from "./data";
 
 const fetchGallery = async () => {
-  const response = await fetch(`${config.aws.api}/gallery`);
+  const response = await fetch(`${config.aws.api}/gallery`, {
+    next: {
+      revalidate: config.time.day,
+    },
+  });
   const gallery = await response.json();
   return gallery as ICard[];
 };

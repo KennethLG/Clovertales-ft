@@ -7,13 +7,21 @@ import { Preview } from "@/components/Home/Preview";
 import { Card } from "@/domain/card";
 
 const fetchPlatforms = async () => {
-  const response = await fetch(`${config.aws.api}/platforms`);
+  const response = await fetch(`${config.aws.api}/platforms`, {
+    next: {
+      revalidate: config.time.day,
+    },
+  });
   const platforms = await response.json();
   return platforms as Platform[];
 };
 
 const fetchGallery = async () => {
-  const response = await fetch(`${config.aws.api}/gallery`);
+  const response = await fetch(`${config.aws.api}/gallery`, {
+    next: {
+      revalidate: config.time.day
+    }
+  });
   const gallery = await response.json();
   return gallery as Card[];
 };

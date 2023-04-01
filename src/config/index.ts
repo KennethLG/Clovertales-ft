@@ -5,5 +5,6 @@ export const config = {
   },
   time: {
     day: 86400,
+    hour: 3600
   },
 };
