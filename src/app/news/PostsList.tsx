@@ -1,6 +1,6 @@
 "use client"
 
-import { Card } from "@/components/global/Card/Card";
+import { ImageCard } from "@/components/global/Card/ImageCard";
 import LoadingCard from "@/components/global/Loaders/LoadingCard";
 import { config } from "@/config";
 import { Post } from "@/domain/post";
@@ -33,7 +33,7 @@ export const PostsList = () => {
   return (
     <>
       {data.map((post, i) => (
-        <Card
+        <ImageCard
           key={i}
           title={post.title}
           description={post.description}

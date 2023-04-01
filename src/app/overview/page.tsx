@@ -1,10 +1,10 @@
-import { Card } from "@/components/global/Card/Card";
 import { Card as ICard } from "@/domain/card";
 import { Conclusion } from "@/components/Overview/Conclusion";
 import { GameplayGallery } from "@/components/Overview/GameplayGallery";
 import { SearchingLightGeneralDescription } from "@/components/Overview/Overview";
 import { config } from "@/config";
 import { cards } from "./data";
+import { VideoCard } from "@/components/global/Card/VideoCard";
 
 const fetchGallery = async () => {
   const response = await fetch(`${config.aws.api}/gallery`, {
@@ -24,7 +24,7 @@ const Overview = async () => {
     <>
       <SearchingLightGeneralDescription />
       {cards.map((card, i) => (
-        <Card key={card.title} {...card} reverse={i % 2 === 0} />
+        <VideoCard key={card.title} {...card} reverse={i % 2 === 0} />
       ))}
       <Conclusion />
       <GameplayGallery gameplayGallery={gallery} />

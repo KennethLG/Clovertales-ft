@@ -9,7 +9,10 @@ export const Image = (props: ImageProps) => {
           props.onClick !== undefined,
       })}
     >
-      <NextImage {...props} className={classNames("rounded-md", props.className)} />
+      <NextImage
+        {...props}
+        className={classNames("rounded-md", props.className)}
+      />
     </div>
   );
 };
