@@ -23,7 +23,7 @@ export default function Form() {
           />
         </div>
       ) : (
-        <form className="px-4 relative" onSubmit={handleSubscribe}>
+        <form className="p-4 relative" onSubmit={handleSubscribe}>
           <div className="overflow-hidden rounded-lg flex items-center border border-transparent transition duration-150 ease-in-out focus-within:border-fuchsia-900 focus-within:ring-1 focus-within:ring-fuchsia-900">
             <input
               type="email"
