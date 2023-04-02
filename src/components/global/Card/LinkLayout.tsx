@@ -11,7 +11,7 @@ export default function LinkLayout ({ children, url }: LinkLayoutProps) {
     return (
       <Link
         href={url}
-        className={classNames("w-3/6 p-3", {
+        className={classNames("w-full md:w-3/6 p-5", {
           "hover:text-purple-400 ease-in-out duration-200": url !== undefined,
         })}
       >
@@ -19,6 +19,6 @@ export default function LinkLayout ({ children, url }: LinkLayoutProps) {
       </Link>
     );
   }
-  return <div className="w-3/6 p-3">{children}</div>;
+  return <div className="w-full md:w-3/6 p-5">{children}</div>;
 };
 

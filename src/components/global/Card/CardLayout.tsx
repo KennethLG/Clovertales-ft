@@ -22,7 +22,7 @@ export const CardLayout = ({
 }: CardLayoutProps) => {
   return (
     <div
-      className={classNames("flex justify-evenly items-center my-28", {
+      className={classNames("flex flex-wrap justify-evenly items-center my-28", {
         "flex-row-reverse": reverse,
       })}
     >

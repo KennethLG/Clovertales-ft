@@ -37,7 +37,7 @@ export const VideoCard = ({
       <video
         src={videoUrl}
         controls
-        className={"w-5/12 rounded-xl shadow-purple-xl max-w-[800px] min-h-[300px]"}
+        className={"w-full md:w-3/6 rounded-xl shadow-purple-xl max-w-[800px] min-h-[300px]"}
         ref={videoRef}
         width={600}
         height={600}
