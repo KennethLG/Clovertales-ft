@@ -13,11 +13,11 @@ export const Gallery = ({ images }: GalleryProps) => {
   const { popupImage, openPopup, closePopup } = useImagePopup();
 
   return (
-    <div className="flex flex-wrap my-5">
+    <div className="flex flex-wrap my-5 justify-center">
       {images
         .sort((a, b) => a.order - b.order)
         .map((image, i) => (
-          <div key={i} className="w-2/6 p-2">
+          <div key={i} className="w-3/6 md:w-2/6 p-2">
             <Image
               alt={`Searching Light image-${i}`}
               src={image.url}
