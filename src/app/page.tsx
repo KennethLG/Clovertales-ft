@@ -5,6 +5,7 @@ import { Platform } from "@/domain/platform";
 import { SearchingLightGeneralDescription } from "@/components/Overview/Overview";
 import { Preview } from "@/components/Home/Preview";
 import { Card } from "@/domain/card";
+import Subscribe from "@/components/Home/Subscribe";
 
 const fetchPlatforms = async () => {
   const response = await fetch(`${config.aws.api}/platforms`, {
@@ -36,6 +37,7 @@ export default async function Page() {
       <SearchingLightGeneralDescription />
       {gallery && <Preview gallery={gallery} />}
       {platforms && <Platforms platforms={platforms} />}
+      <Subscribe />
     </>
   );
 }

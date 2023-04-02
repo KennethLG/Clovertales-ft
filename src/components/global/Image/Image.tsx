@@ -11,7 +11,7 @@ export const Image = (props: ImageProps) => {
     >
       <NextImage
         {...props}
-        className={classNames("rounded-md", props.className)}
+        className={classNames(props.className || "rounded-md")}
       />
     </div>
   );
