@@ -5,7 +5,7 @@ import { Platform } from "@/domain/platform";
 import { SearchingLightGeneralDescription } from "@/components/Overview/Overview";
 import { Preview } from "@/components/Home/Preview";
 import { Card } from "@/domain/card";
-import Subscribe from "@/components/Home/Subscribe";
+import Subscribe from "@/components/Home/Subscribe/Subscribe";
 
 const fetchPlatforms = async () => {
   const response = await fetch(`${config.aws.api}/platforms`, {
