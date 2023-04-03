@@ -22,7 +22,7 @@ export const SocialList = () => {
       Icon: "itchio",
     },
     {
-      link: "https://gamejolt.com/@CloverStory",
+      link: "https://gamejolt.com/@CloverTales",
       Icon: "gamejolt",
     },
   ];
