@@ -3,11 +3,10 @@
 import { Toaster } from "react-hot-toast";
 import Image from "next/image";
 import { config } from "@/config";
-import { useSubscribe, useInputValue } from "@/hooks/useSubscribe";
+import { useSubscribe } from "@/hooks/useSubscribe";
 
 export default function Form() {
-  const { handleSubscribe, isSent } = useSubscribe();
-  const { handleChange, value } = useInputValue("");
+  const { handleSubscribe, isSent, handleChange, value } = useSubscribe("");
 
   return (
     <>

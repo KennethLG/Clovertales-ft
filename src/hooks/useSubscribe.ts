@@ -1,11 +1,21 @@
+import { config } from "@/config";
 import { ChangeEventHandler, FormEventHandler, useState } from "react";
 import toast from "react-hot-toast";
 
-export const useSubscribe = () => {
+export const useSubscribe = (initialValue: string) => {
   const [isSent, setIsSent] = useState(false);
+  const [value, setValue] = useState(initialValue);
 
-  const subscribe = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+  const subscribe = async (email: string) => {
+    await fetch(`${config.aws.api}/user`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email
+      }),
+    });
   };
 
   const handleSubscribe: FormEventHandler<HTMLFormElement> = async (
@@ -13,7 +23,7 @@ export const useSubscribe = () => {
   ) => {
     event.preventDefault();
     setIsSent(true);
-    const subscribePromise = subscribe();
+    const subscribePromise = subscribe(value);
     toast.promise(
       subscribePromise,
       {
@@ -32,15 +42,10 @@ export const useSubscribe = () => {
     );
   };
 
-  return { isSent, handleSubscribe };
-};
-
-export const useInputValue = (initialValue: string) => {
-  const [value, setValue] = useState(initialValue);
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     setValue(event.target.value);
   };
 
-  return { value, handleChange };
+  return { value, handleChange, isSent, handleSubscribe };
 };
