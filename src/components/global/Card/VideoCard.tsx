@@ -1,9 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react";
 import { CardLayout } from "./CardLayout";
-import useVideoAutoplayOnIntersection from "@/hooks/useVideoAutoplayOnIntersection";
-import classNames from "classnames";
 
 type VideoCardProps = {
   title: string;
@@ -22,9 +19,6 @@ export const VideoCard = ({
   reverse,
   url,
 }: VideoCardProps) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useVideoAutoplayOnIntersection(videoRef, 1);
 
   return (
     <CardLayout
@@ -34,14 +28,17 @@ export const VideoCard = ({
       reverse={reverse}
       url={url}
     >
-      <video
-        src={videoUrl}
-        controls
-        className={"w-full md:w-3/6 rounded-xl shadow-purple-xl max-w-[800px] min-h-[300px]"}
-        ref={videoRef}
-        width={600}
-        height={600}
-      />
+      <div className="p-3 w-full md:w-3/6">
+        <iframe
+        
+          height={500}
+          src={videoUrl}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="w-full"
+        />
+      </div>
     </CardLayout>
   );
 };
