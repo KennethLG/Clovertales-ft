@@ -27,6 +27,7 @@ export const Input = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          required
         />
       ) : (
         <input
@@ -36,6 +37,7 @@ export const Input = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          required
         />
       )}
     </label>
