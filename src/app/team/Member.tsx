@@ -1,6 +1,7 @@
 import { config } from "@/config";
 import { Member } from "@/domain/member";
 import Image from "next/image";
+import SocialList from "./SocialList";
 
 type MemberProps = {
   member: Member;
@@ -18,6 +19,7 @@ export const MemberCard = ({ member }: MemberProps) => {
       />
       <h1 className="text-2xl">{member.name}</h1>
       <h1 className="text-base">{member.role}</h1>
+      <SocialList social={member.social} />
     </div>
   );
 };

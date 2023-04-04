@@ -7,7 +7,7 @@ const fetchTeam = async () => {
     cache: "force-cache",
   });
   const team = await response.json();
-  return team;
+  return team as Member[];
 };
 
 const Team = async () => {
@@ -29,7 +29,7 @@ const Team = async () => {
         through parallel worlds beyond your wildest dreams.
       </p>
 
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap ">
         {team.map((member: Member) => (
           <MemberCard key={member.name} member={member} />
         ))}
