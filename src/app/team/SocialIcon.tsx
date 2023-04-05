@@ -14,7 +14,7 @@ interface SocialIconProps {
 export default function SocialIcon({ name }: SocialIconProps) {
 
   const socialIconProps = {
-    size: 16
+    size: 20
   }
 
   switch (name) {

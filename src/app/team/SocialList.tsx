@@ -8,7 +8,7 @@ interface SocialProps {
 
 export default function SocialList({ social }: SocialProps) {
   return (
-    <div className="flex flex-wrap gap-1">
+    <div className="flex flex-wrap justify-center gap-1">
       {social.map((item) => (
         <a
           className=""
@@ -17,7 +17,7 @@ export default function SocialList({ social }: SocialProps) {
           key={item.url}
           rel="noopener noreferrer"
         >
-          <Button className="px-1 py-1 my-1 text-xs">
+          <Button className="px-0.5 py-0.5 my-1 text-xs">
             <SocialIcon name={item.name} />
           </Button>
         </a>
