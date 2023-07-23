@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { Image } from "./Image";
+import { useSwipeable } from "react-swipeable";
 
 interface ImagePopupProps {
   src?: string;
@@ -9,6 +10,16 @@ interface ImagePopupProps {
 }
 
 export const ImagePopup = ({ src, alt, isOpen, onClose }: ImagePopupProps) => {
+
+  const handlers = useSwipeable({
+    onSwipedRight: () => {
+      console.log("right")
+    },
+    onSwipedLeft: () => {
+      console.log("left");
+    }
+  });
+
   return (
     <div
       className={classNames(
@@ -20,13 +31,14 @@ export const ImagePopup = ({ src, alt, isOpen, onClose }: ImagePopupProps) => {
         }
       )}
     >
-      <div className="relative w-5/6 h-5/6">
+      <div className="relative w-5/6 h-5/6 pointer-events-none">
         {src && alt ? (
           <Image
             src={src}
             alt={alt}
             fill
             className="absolute top-0 left-0 w-full h-full object-contain"
+            {...handlers}
           />
         ) : (
           <></>
