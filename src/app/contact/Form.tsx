@@ -10,7 +10,7 @@ type InputForm = {
 }
 
 interface FormProps {
-  onSubmit: (form: any) => Promise<void>;
+  onSubmit: (form: InputForm) => Promise<void>;
 }
 
 export default function Form({ onSubmit }: FormProps) {
