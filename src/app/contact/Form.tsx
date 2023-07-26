@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/global/Button/Button";
 import { Input } from "@/components/global/Input/Input";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 type InputForm = {
