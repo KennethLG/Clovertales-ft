@@ -21,8 +21,7 @@ const Contact = () => {
     });
   };
   
-  const onSubmit = async (event: React.FormEvent, form: any) => {
-    event.preventDefault();
+  const onSubmit = async (form: any) => {
     const sendEmailPromise = sendEmail(form);
     setEmailSent(true);
     toast.promise(
