@@ -15,7 +15,7 @@ export const Banner = () => {
   return (
     <div className="relative">
       <Image
-        src={`${config.aws.cdn}/home/banner-small.png`}
+        src={`${config.aws.cdn}/home/banner-small.jpg`}
         alt="SearchingLight banner"
         className="h-auto w-full"
         width={1000}
