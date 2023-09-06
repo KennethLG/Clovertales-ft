@@ -1,5 +1,6 @@
 import { config } from "@/config";
 import fetch from "node-fetch";
+import "./styles.css"
 
 const fetchLegalDocument = async () => {
   const response = await fetch(`${config.aws.cdn}/legal.html`);
