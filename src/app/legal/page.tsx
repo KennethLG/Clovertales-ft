@@ -11,7 +11,6 @@ const fetchLegalDocument = async () => {
 
 const Legal = async () => {
   const legalDocument = await fetchLegalDocument();
-  console.log("document", legalDocument);
 
   return <div dangerouslySetInnerHTML={{ __html: legalDocument }} />;
 };
