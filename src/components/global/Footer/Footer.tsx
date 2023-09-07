@@ -1,6 +1,7 @@
 import { config } from "@/config";
 import Image from "next/image";
 import { SocialList } from "./SocialList";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -19,13 +20,16 @@ export const Footer = () => {
         <SocialList />
       </div>
 
-      <div>
-        <p className="text-center text-sm">
-          &copy; {new Date().getFullYear()} Clover Tales
+      <div className="flex flex-col gap-y-1">
+        <p className="text-center text-base">
+          <Link href="/legal">Terms & Conditions</Link>
         </p>
-        <div className="text-center text-sm">
+        <div className="text-center text-base">
           <a href="mailto:contact@clovertales.com">contact@clovertales.com</a>
         </div>
+        <p className="text-center text-base">
+          &copy; {new Date().getFullYear()} Clover Tales
+        </p>
       </div>
     </footer>
   );
