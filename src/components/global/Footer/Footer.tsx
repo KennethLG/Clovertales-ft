@@ -21,10 +21,13 @@ export const Footer = () => {
       </div>
 
       <div className="flex flex-col gap-y-1">
-        <p className="text-center text-base">
-          <Link href="/legal">Terms & Conditions</Link>
-        </p>
-        <div className="text-center text-base">
+        <Link
+          className="text-center text-base hover:text-fuchsia-400"
+          href="/legal"
+        >
+          Terms & Conditions
+        </Link>
+        <div className="text-center text-base hover:text-fuchsia-400">
           <a href="mailto:contact@clovertales.com">contact@clovertales.com</a>
         </div>
         <p className="text-center text-base">
