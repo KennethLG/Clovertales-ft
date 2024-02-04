@@ -1,7 +1,7 @@
 "use client";
 
 import { SocialItem } from "./SocialItem";
-import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa"
+import { FaFacebook, FaTiktok, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export const SocialList = () => {
   const social = [
@@ -10,7 +10,7 @@ export const SocialList = () => {
       Icon: FaFacebook,
     },
     {
-      link: "https://twitter.com/clovertales",
+      link: "https://twitter.com/clovertalesdev",
       Icon: FaTwitter,
     },
     {
@@ -24,6 +24,10 @@ export const SocialList = () => {
     {
       link: "https://gamejolt.com/@CloverTales",
       Icon: "gamejolt",
+    },
+    {
+      link: "https://www.tiktok.com/@clovertalesdev",
+      Icon: FaTiktok,
     },
   ];
 

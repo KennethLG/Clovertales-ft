@@ -5,7 +5,8 @@ import {
   SiInstagram,
   SiLinkedin,
   SiTwitter,
-  SiSpotify
+  SiSpotify,
+  SiTiktok,
 } from "react-icons/si";
 
 interface SocialIconProps {
@@ -13,11 +14,10 @@ interface SocialIconProps {
 }
 
 export default function SocialIcon({ name }: SocialIconProps) {
-
   const socialIconProps = {
     size: 20,
-    color: "white"
-  }
+    color: "white",
+  };
 
   switch (name) {
     case "ArtStation":
@@ -34,6 +34,8 @@ export default function SocialIcon({ name }: SocialIconProps) {
       return <SiLinkedin {...socialIconProps} />;
     case "Spotify":
       return <SiSpotify {...socialIconProps} />;
+    case "TikTok":
+      return <SiTiktok {...socialIconProps} />;
     default:
       return <p>{name}</p>;
   }
