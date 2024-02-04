@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import { config } from "@/config";
 import { Post as IPost } from "@/domain/post";
-import useApiRequest from "@/hooks/useResponse";
-import "./styles.css"
+import useApiRequest from "@/hooks/useApiRequest";
+import "./styles.css";
 
 interface PostProps {
   params: {
@@ -16,20 +16,24 @@ export default function Post({ params }: PostProps) {
     url: `${config.aws.api}/post?id=${params.id}`,
     init: {
       next: {
-        revalidate: config.time.day
-      }
-    }
+        revalidate: config.time.day,
+      },
+    },
   });
 
   if (error) {
-    return <h1>{error.message}</h1>
+    return <h1>{error.message}</h1>;
   }
 
   if (!data) {
-    return <h1>Loading...</h1>
+    return <h1>Loading...</h1>;
   }
 
-  return <div dangerouslySetInnerHTML={{
-    __html: data.content
-  }} />
+  return (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: data.content,
+      }}
+    />
+  );
 }
