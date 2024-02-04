@@ -15,7 +15,7 @@ type PostResponse = {
 export const PostsList = () => {
   const [lastEvaluatedKey, setLastEvaluatedKey] = useState<string>("");
   const { data, error } = useApiRequest<PostResponse>({
-    url: `${config.aws.api}/post${new URLSearchParams({
+    url: `${config.aws.api}/post?${new URLSearchParams({
       limit: "10",
       startKey: lastEvaluatedKey || "",
     }).toString()}`,
