@@ -12,6 +12,12 @@ type PostResponse = {
   lastEvaluatedKey?: string;
 };
 
+const sortPostsByDate = (posts: Post[]) => {
+  return posts.sort(
+    (a, b) => new Date(a.createdAt).getDate() - new Date(b.createdAt).getDate()
+  );
+};
+
 export const PostsList = () => {
   const [lastEvaluatedKey, setLastEvaluatedKey] = useState<string>("");
   const { data, error } = useApiRequest<PostResponse>({
@@ -46,9 +52,11 @@ export const PostsList = () => {
     );
   }
 
+  const sortedPosts = sortPostsByDate(data.items);
+
   return (
     <>
-      {data.items.map((post, i) => (
+      {sortedPosts.map((post, i) => (
         <ImageCard
           key={i}
           title={post.title}
