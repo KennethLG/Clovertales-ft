@@ -1,10 +1,10 @@
 export const About = () => {
   return (
-    <section className="text-center w-full m-auto">
-      <h1 className="text-5xl"> Don&apos;t be afraid! </h1>
-      <h1 className="text-5xl"> We are also monsters. </h1>
+    <section className="w-full m-auto">
+      <h1 className="text-5xl text-center"> Don&apos;t be afraid! </h1>
+      <h1 className="text-5xl text-center"> We are also monsters. </h1>
 
-      <p className="mt-10">
+      <p className="mt-10 text-justify">
         Get ready to cross the threshold into two parallel universes, where
         reality is twisted and danger lurks around every corner. In this indie
         video game, you&apos;ll guide a child as they navigate through two

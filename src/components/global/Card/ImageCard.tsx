@@ -1,17 +1,9 @@
-"use client"
+"use client";
 
 import { Image } from "../Image/Image";
 import { CardLayout } from "./CardLayout";
 import useImageClickNavigation from "@/hooks/useImageClickNavigation";
-
-type ImageCardProps = {
-  title: string;
-  description: string;
-  imageUrl: string;
-  date?: string;
-  reverse?: boolean;
-  url?: string;
-};
+import { CardProps } from "./interfaces";
 
 export const ImageCard = ({
   title,
@@ -20,7 +12,7 @@ export const ImageCard = ({
   date,
   reverse,
   url,
-}: ImageCardProps) => {
+}: CardProps) => {
   const { handleImageClick } = useImageClickNavigation(
     url,
     imageUrl,
