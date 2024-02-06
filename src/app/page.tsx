@@ -6,6 +6,7 @@ import { SearchingLightGeneralDescription } from "@/components/Overview/Overview
 import { Preview } from "@/components/Home/Preview";
 import { Card } from "@/domain/card";
 import Subscribe from "@/components/Home/Subscribe/Subscribe";
+import { Aside } from "@/components/Home/Aside";
 
 const fetchPlatforms = async () => {
   const response = await fetch(`${config.aws.api}/platforms`, {
@@ -20,8 +21,8 @@ const fetchPlatforms = async () => {
 const fetchGallery = async () => {
   const response = await fetch(`${config.aws.api}/gallery`, {
     next: {
-      revalidate: config.time.day
-    }
+      revalidate: config.time.day,
+    },
   });
   const gallery = await response.json();
   return gallery as Card[];
@@ -32,12 +33,18 @@ export default async function Page() {
   const gallery = await fetchGallery();
 
   return (
-    <>
-      <About />
-      <SearchingLightGeneralDescription />
-      {gallery && <Preview gallery={gallery} />}
-      {platforms && <Platforms platforms={platforms} />}
-      <Subscribe />
-    </>
+    <div className="flex flex-row w-full">
+      {/* Main Content */}
+      <div className="w-7/10 mr-5">
+        <About />
+        <SearchingLightGeneralDescription />
+        {gallery && <Preview gallery={gallery} />}
+        {platforms && <Platforms platforms={platforms} />}
+        <Subscribe />
+      </div>
+
+      {/* Aside Content */}
+      <Aside />
+    </div>
   );
 }

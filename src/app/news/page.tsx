@@ -1,6 +1,9 @@
+"use client";
+
 import { Image } from "@/components/global/Image/Image";
 import { config } from "@/config";
 import { PostsList } from "./PostsList";
+import { ImageCard } from "@/components/global/Card/ImageCard";
 
 export default function Layout() {
   return (
@@ -21,7 +24,7 @@ export default function Layout() {
         you wanting more.
       </p>
 
-      <PostsList />
+      <PostsList CardComponent={ImageCard} />
     </section>
   );
 }

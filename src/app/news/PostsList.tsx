@@ -1,11 +1,11 @@
 "use client";
 
-import { ImageCard } from "@/components/global/Card/ImageCard";
+import { CardProps } from "@/components/global/Card/interfaces";
 import LoadingCard from "@/components/global/Loaders/LoadingCard";
 import { config } from "@/config";
 import { Post } from "@/domain/post";
 import useApiRequest from "@/hooks/useApiRequest";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type PostResponse = {
   items: Post[];
@@ -18,11 +18,19 @@ const sortPostsByDate = (posts: Post[]) => {
   );
 };
 
-export const PostsList = () => {
+type PostsListProps = {
+  limit?: string;
+  CardComponent: React.FC<CardProps>;
+};
+
+export const PostsList: React.FC<PostsListProps> = ({
+  limit,
+  CardComponent,
+}) => {
   const [lastEvaluatedKey, setLastEvaluatedKey] = useState<string>("");
   const { data, error } = useApiRequest<PostResponse>({
     url: `${config.aws.api}/post?${new URLSearchParams({
-      limit: "10",
+      limit: limit || "10",
       startKey: lastEvaluatedKey || "",
     }).toString()}`,
     init: {
@@ -57,14 +65,14 @@ export const PostsList = () => {
   return (
     <>
       {sortedPosts.map((post, i) => (
-        <ImageCard
+        <CardComponent
           key={i}
           title={post.title}
           description={post.description}
           imageUrl={post.imageUrl}
           date={post.createdAt}
-          reverse={i % 2 === 0}
           url={`/news/${post.id}`}
+          reverse={i % 2 === 0}
         />
       ))}
     </>
