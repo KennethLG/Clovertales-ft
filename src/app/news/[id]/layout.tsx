@@ -1,20 +1,23 @@
+"use client";
+
 import classNames from "classnames";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { IoIosArrowBack } from "react-icons/io";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
 
-  const GoBack = ({ className }: { className: string }) => (
-    <Link
+  const GoBack = ({ className }: { className?: string }) => (
+    <div
       className={classNames(
         "flex items-center hover:text-purple-400 ease-in-out duration-200 cursor-pointer",
         className
       )}
-      href={"/news"}
+      onClick={() => router.back()}
     >
       <IoIosArrowBack size={24} />
-      <h3>Return to News</h3>
-    </Link>
+      <h3 className="ml-2">Go Back</h3>
+    </div>
   );
 
   return (

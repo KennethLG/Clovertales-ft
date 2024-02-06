@@ -2,6 +2,7 @@
 
 import { FeaturedCard } from "@/components/global/Card/FeaturedCard";
 import { PostsList } from "../../app/news/PostsList";
+import "./Aside.styles.css";
 
 export const Aside = () => {
   return (
