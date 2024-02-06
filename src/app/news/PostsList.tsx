@@ -40,11 +40,11 @@ export const PostsList: React.FC<PostsListProps> = ({
     },
   });
 
-  useEffect(() => {
-    if (data && !error) {
-      setLastEvaluatedKey(data.lastEvaluatedKey || "");
-    }
-  }, [data, error]);
+  // useEffect(() => {
+  //   if (data && !error) {
+  //     setLastEvaluatedKey(data.lastEvaluatedKey || "");
+  //   }
+  // }, [data, error]);
 
   if (error) {
     return <h1>Could not load the posts</h1>;
