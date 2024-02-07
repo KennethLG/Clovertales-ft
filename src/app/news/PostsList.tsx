@@ -74,7 +74,7 @@ export const PostsList: React.FC<PostsListProps> = ({
           description={post.description}
           imageUrl={post.imageUrl}
           date={post.createdAt}
-          url={`/news/${post.id}`}
+          url={`/news/${post.createdAt}`}
           reverse={i % 2 === 0}
         />
       ))}
