@@ -24,7 +24,7 @@ export default function Layout() {
         you wanting more.
       </p>
 
-      <PostsList CardComponent={ImageCard} />
+      <PostsList CardComponent={ImageCard} limit="2" withControls />
     </section>
   );
 }

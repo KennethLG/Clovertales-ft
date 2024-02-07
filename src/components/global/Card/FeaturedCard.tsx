@@ -52,7 +52,9 @@ export const FeaturedCard = ({
             {truncateText(description, maxDescriptionLength)}
           </p>
           {date && (
-            <span className="text-sm text-gray-300">{formatDate(date)}</span>
+            <span className="text-xs text-gray-300 leading-5">
+              {formatDate(date)}
+            </span>
           )}
         </div>
       </div>

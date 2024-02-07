@@ -1,70 +1,73 @@
-"use client";
-
-import { CardProps } from "@/components/global/Card/interfaces";
-import LoadingCard from "@/components/global/Loaders/LoadingCard";
+import React, { useState, useEffect } from "react";
 import { config } from "@/config";
 import { Post } from "@/domain/post";
-import useApiRequest from "@/hooks/useApiRequest";
-import React, { useEffect, useState } from "react";
-
-type PostResponse = {
-  items: Post[];
-  lastEvaluatedKey?: string;
-};
-
-const sortPostsByDate = (posts: Post[]) => {
-  return posts.sort(
-    (a, b) => new Date(a.createdAt).getDate() - new Date(b.createdAt).getDate()
-  );
-};
+import LoadingCard from "@/components/global/Loaders/LoadingCard";
+import { PaginationControls } from "./Pagination";
 
 type PostsListProps = {
-  limit?: string;
-  CardComponent: React.FC<CardProps>;
+  limit: string;
+  withControls?: boolean;
+  CardComponent: React.FC<any>;
 };
 
 export const PostsList: React.FC<PostsListProps> = ({
   limit,
+  withControls = false,
   CardComponent,
 }) => {
-  const [lastEvaluatedKey, setLastEvaluatedKey] = useState<string>("");
-  const { data, error } = useApiRequest<PostResponse>({
-    url: `${config.aws.api}/post?${new URLSearchParams({
-      limit: limit || "10",
-      startKey: lastEvaluatedKey || "",
-    }).toString()}`,
-    init: {
-      next: {
-        revalidate: config.time.hour,
-      },
-    },
-  });
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [lastKey, setLastKey] = useState<any>(null);
+  const [previousKeys, setPreviousKeys] = useState<any[]>([]);
 
-  // useEffect(() => {
-  //   if (data && !error) {
-  //     setLastEvaluatedKey(data.lastEvaluatedKey || "");
-  //   }
-  // }, [data, error]);
+  const fetchPosts = async (key?: any) => {
+    setIsLoading(true);
+    setError(null);
+    let url = `${config.aws.api}/post?limit=${limit}`;
+    if (key) {
+      url += `&startKey[id]=${key.id}&startKey[createdAt]=${key.createdAt}`;
+    }
 
-  if (error) {
-    return <h1>Could not load the posts</h1>;
-  }
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      if (!response.ok)
+        throw new Error(data.message || "Failed to fetch posts");
+      setPosts(data.items);
+      setLastKey(data.lastEvaluatedKey);
+    } catch (error: any) {
+      setError(error.toString());
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-  if (!data) {
-    return (
-      <>
-        {[...Array(3).keys()].map((i) => (
-          <LoadingCard key={i} />
-        ))}
-      </>
-    );
-  }
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
-  const sortedPosts = sortPostsByDate(data.items);
+  const handlePrevious = () => {
+    const newPreviousKeys = [...previousKeys];
+    newPreviousKeys.pop();
+    const previousKey = newPreviousKeys[newPreviousKeys.length - 1] || null;
+    setPreviousKeys(newPreviousKeys);
+    fetchPosts(previousKey);
+  };
+
+  const handleNext = () => {
+    if (lastKey && !previousKeys.includes(lastKey)) {
+      setPreviousKeys([...previousKeys, lastKey]);
+      fetchPosts(lastKey);
+    }
+  };
+
+  if (error) return <div>{error}</div>;
+  if (isLoading) return <LoadingCard />;
 
   return (
     <>
-      {sortedPosts.map((post, i) => (
+      {posts.map((post, i) => (
         <CardComponent
           key={i}
           title={post.title}
@@ -75,6 +78,14 @@ export const PostsList: React.FC<PostsListProps> = ({
           reverse={i % 2 === 0}
         />
       ))}
+      {withControls && (
+        <PaginationControls
+          hasPrevious={previousKeys.length > 0}
+          hasNext={!!lastKey}
+          onPrevious={handlePrevious}
+          onNext={handleNext}
+        />
+      )}
     </>
   );
 };

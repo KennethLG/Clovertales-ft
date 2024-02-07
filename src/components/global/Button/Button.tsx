@@ -7,6 +7,7 @@ type ButtonProps = {
   type?: "button" | "submit";
   children?: React.ReactNode;
   className?: string;
+  disabled?: boolean;
 };
 
 export const Button = ({
@@ -15,6 +16,7 @@ export const Button = ({
   type,
   children,
   className,
+  disabled,
 }: ButtonProps) => {
   const buttonClass = classNames(
     "bg-fuchsia-500 hover:bg-fuchsia-700 text-white font-bold py-2 px-4 rounded my-5 transition ease-in-out",
@@ -26,6 +28,7 @@ export const Button = ({
       onSubmit={onSubmit}
       onClick={onClick}
       className={buttonClass}
+      disabled={disabled}
     >
       {children}
     </button>
