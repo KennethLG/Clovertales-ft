@@ -5,15 +5,15 @@ import { config } from "@/config";
 import { PostsList } from "./PostsList";
 import { ImageCard } from "@/components/global/Card/ImageCard";
 
-export default function Layout() {
+export default function News() {
   return (
     <section>
       <h1 className="text-5xl text-center">Updates and News</h1>
       <Image
         src={`${config.aws.cdn}/snowBg-small.png`}
         alt="Searching Light snow background"
-        width={200}
-        height={200}
+        width={400}
+        height={400}
         loading="lazy"
         className="h-auto w-full mt-4 md:w-4/5 m-auto rounded-2xl"
       />
@@ -24,7 +24,7 @@ export default function Layout() {
         you wanting more.
       </p>
 
-      <PostsList CardComponent={ImageCard} limit="2" withControls />
+      <PostsList CardComponent={ImageCard} limit="5" withControls />
     </section>
   );
 }
