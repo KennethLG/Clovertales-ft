@@ -35,7 +35,7 @@ export default async function Page() {
   return (
     <div className="flex flex-row w-full min-h-screen">
       {/* Main Content */}
-      <div className="w-7/10 mr-5">
+      <div className="w-full md:w-7/10 md:mr-5">
         <About />
         <SearchingLightGeneralDescription />
         {gallery && <Preview gallery={gallery} />}
