@@ -15,7 +15,7 @@ export default function RootLayout({
 
         <main className="min-h-screen w-full">
           <Banner />
-          <div className="max-w-4xl p-3 m-auto my-32">{children}</div>
+          <div className="max-w-4xl p-3 m-auto mt-14">{children}</div>
         </main>
         <Footer />
       </body>

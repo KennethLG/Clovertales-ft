@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { BurgerMenu } from "./BurgerMenu";
+import "./Navigation.styles.css";
 
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
@@ -36,22 +37,24 @@ export const Navigation = () => {
 
   return (
     <>
-      <div className="flex flex-row justify-evenly items-center p-2 bg-fuchsia-900/50 fixed top-0 w-full backdrop-blur-sm z-30 ">
+      <div className="navbar flex flex-row fixed top-0 w-full z-30 ">
         <Link href="/" className="flex flex-row items-center">
           <Image
             src={`${config.aws.cdn}/icon.png`}
             width={50}
             height={50}
-            className="rounded-full"
+            className="rounded-full w-8 h-8"
             alt="SearchingLight icon"
           />
-          <div className="text-lg md:text-2xl font-bold ml-2">Clover Tales</div>
+          <div className="text-lg md:text-base font-bold ml-2">
+            Clover Tales
+          </div>
         </Link>
         <ul className="hidden md:flex flex-row items-center">
           {tabs.map((tab) => (
             <li
               key={tab.name}
-              className="text-base mx-3 font-bold cursor-pointer hover:text-fuchsia-500 transition delay-75 duration-100"
+              className="text-sm mx-3 font-bold cursor-pointer hover:text-fuchsia-500 transition delay-75 duration-100"
             >
               <Link href={tab.link}>{tab.name}</Link>
             </li>

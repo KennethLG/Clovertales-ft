@@ -33,7 +33,7 @@ export default async function Page() {
   const gallery = await fetchGallery();
 
   return (
-    <div className="flex flex-row w-full min-h-screen">
+    <div className="flex flex-row w-full min-h-screen relative">
       {/* Main Content */}
       <div className="w-full md:w-7/10 md:mr-5">
         <About />

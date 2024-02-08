@@ -1,0 +1,7 @@
+.main-banner {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}

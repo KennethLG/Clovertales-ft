@@ -2,7 +2,6 @@
 
 import { FeaturedCard } from "@/components/global/Card/FeaturedCard";
 import { PostsList } from "../../app/news/PostsList";
-import "./Aside.styles.css";
 import Link from "next/link";
 import { useWindowWidth } from "@/hooks/useWindowWidth";
 
@@ -14,7 +13,7 @@ export const Aside = () => {
   }
 
   return (
-    <aside className="w-3/10 sticky top-0 h-auto">
+    <aside className="w-3/10 sticky top-[70px] h-min">
       <Link href={"/news"}>
         <h2 className="text-xl text-center font-bold cursor-pointer hover:text-fuchsia-500 transition delay-75 duration-100">
           Latest news
