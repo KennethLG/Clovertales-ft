@@ -3,17 +3,10 @@
 import { FeaturedCard } from "@/components/global/Card/FeaturedCard";
 import { PostsList } from "../../app/news/PostsList";
 import Link from "next/link";
-import { useWindowWidth } from "@/hooks/useWindowWidth";
 
 export const Aside = () => {
-  const isWideScreen = useWindowWidth(640);
-
-  if (!isWideScreen) {
-    return null;
-  }
-
   return (
-    <aside className="w-3/10 sticky top-[70px] h-min">
+    <aside className="w-full md:w-4/12 sticky top-[70px] h-min">
       <Link href={"/news"}>
         <h2 className="text-xl text-center font-bold cursor-pointer hover:text-fuchsia-500 transition delay-75 duration-100">
           Latest news

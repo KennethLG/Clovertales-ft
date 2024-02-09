@@ -33,9 +33,9 @@ export default async function Page() {
   const gallery = await fetchGallery();
 
   return (
-    <div className="flex flex-row w-full min-h-screen relative">
+    <div className="md:flex md:flex-row w-full min-h-screen relative">
       {/* Main Content */}
-      <div className="w-full md:w-7/10 md:mr-5">
+      <div className="w-full md:w-8/12 md:mr-5">
         <About />
         <SearchingLightGeneralDescription />
         {gallery && <Preview gallery={gallery} />}

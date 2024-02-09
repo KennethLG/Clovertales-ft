@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { config } from "@/config";
 import { Post } from "@/domain/post";
@@ -16,7 +18,7 @@ export const PostsList: React.FC<PostsListProps> = ({
   CardComponent,
 }) => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [lastKey, setLastKey] = useState<any>(null);
   const [previousKeys, setPreviousKeys] = useState<any[]>([]);

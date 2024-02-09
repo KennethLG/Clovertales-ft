@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 // Custom hook to check for window width
 export const useWindowWidth = (threshold = 640) => {
-  const [isWideScreen, setIsWideScreen] = useState(false);
+  const [isWideScreen, setIsWideScreen] = useState(true);
 
   useEffect(() => {
     const updateWidth = () => {

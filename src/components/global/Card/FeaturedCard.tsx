@@ -33,8 +33,8 @@ export const FeaturedCard = ({
 
   return (
     <LinkLayout url={url}>
-      <div className="flex items-center space-x-4 rounded-lg overflow-hidden p-4">
-        <div className="flex-none w-24 h-24 relative">
+      <div className="flex items-center space-x-4 rounded-lg overflow-hidden p-1">
+        <div className="flex-none w-16 h-16 relative">
           <Image
             src={imageUrl}
             alt={`${title} image`}
