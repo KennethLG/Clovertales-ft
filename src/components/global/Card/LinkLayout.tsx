@@ -6,12 +6,12 @@ interface LinkLayoutProps {
   url?: string;
 }
 
-export default function LinkLayout ({ children, url }: LinkLayoutProps) {
+export default function LinkLayout({ children, url }: LinkLayoutProps) {
   if (url) {
     return (
       <Link
         href={url}
-        className={classNames("w-full md:w-3/6 p-5", {
+        className={classNames("w-full md:w-3/6", {
           "hover:text-purple-400 ease-in-out duration-200": url !== undefined,
         })}
       >
@@ -19,6 +19,5 @@ export default function LinkLayout ({ children, url }: LinkLayoutProps) {
       </Link>
     );
   }
-  return <div className="w-full md:w-3/6 p-5">{children}</div>;
-};
-
+  return <div className="w-full md:w-3/6">{children}</div>;
+}
