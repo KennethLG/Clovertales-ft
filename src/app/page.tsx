@@ -34,10 +34,9 @@ export default async function Page() {
   const gallery = await fetchGallery();
 
   return (
-    <div className="md:flex md:flex-row w-full min-h-screen relative">
-      {/* Main Content */}
-      <AsideDevlog />
-      <div className="w-full px-5 md:w-8/12 md:mr-5">
+    <div className="flex flex-col pb-16 md:pb-0 gap-16 md:flex-row md:gap-1 w-full min-h-screen">
+      {/* Main Content - First on mobile, second in order on desktop */}
+      <div className="flex-1 order-1 md:order-2 px-5">
         <About />
         <SearchingLightGeneralDescription />
         {gallery && <Preview gallery={gallery} />}
@@ -45,8 +44,15 @@ export default async function Page() {
         <Subscribe />
       </div>
 
-      {/* Aside Content */}
-      <AsideNews />
+      {/* AsideNews - Second on mobile, third in order on desktop */}
+      <div className="order-3 md:order-3 w-full md:w-3/12">
+        <AsideNews />
+      </div>
+
+      {/* AsideDevlog - Third on mobile, first in order on desktop */}
+      <div className="order-2 md:order-1 w-full md:w-3/12">
+        <AsideDevlog />
+      </div>
     </div>
   );
 }
