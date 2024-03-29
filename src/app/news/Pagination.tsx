@@ -19,8 +19,8 @@ export const PaginationControls = ({
 
   return (
     <div className="w-full flex justify-between px-4 py-3">
-      {renderButton(onPrevious, "Newer Posts", hasPrevious)}
-      {renderButton(onNext, "Older Posts", hasNext)}
+      {renderButton(onPrevious, "Previous", hasPrevious)}
+      {renderButton(onNext, "Next", hasNext)}
     </div>
   );
 };

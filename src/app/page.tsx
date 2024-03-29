@@ -6,7 +6,8 @@ import { SearchingLightGeneralDescription } from "@/components/Overview/Overview
 import { Preview } from "@/components/Home/Preview";
 import { Card } from "@/domain/card";
 import Subscribe from "@/components/Home/Subscribe/Subscribe";
-import { Aside } from "@/components/Home/Aside";
+import { AsideNews } from "@/components/Home/AsideNews";
+import { AsideDevlog } from "@/components/Home/AsideDevlog";
 
 const fetchPlatforms = async () => {
   const response = await fetch(`${config.aws.api}/platforms`, {
@@ -35,7 +36,8 @@ export default async function Page() {
   return (
     <div className="md:flex md:flex-row w-full min-h-screen relative">
       {/* Main Content */}
-      <div className="w-full md:w-8/12 md:mr-5">
+      <AsideDevlog />
+      <div className="w-full px-5 md:w-8/12 md:mr-5">
         <About />
         <SearchingLightGeneralDescription />
         {gallery && <Preview gallery={gallery} />}
@@ -44,7 +46,7 @@ export default async function Page() {
       </div>
 
       {/* Aside Content */}
-      <Aside />
+      <AsideNews />
     </div>
   );
 }
