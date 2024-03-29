@@ -20,7 +20,7 @@ export const DevlogCardSmall = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="block p-4 bg-stone-900 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300 my-3">
+    <div className="block p-3 bg-stone-900 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300 my-3">
       <div className="flex items-start justify-between">
         <h5 className="text-sm leading-5">{truncateText(title, maxTitleLength)}</h5>
       </div>

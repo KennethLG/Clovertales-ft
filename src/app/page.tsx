@@ -50,7 +50,7 @@ export default async function Page() {
       </div>
 
       {/* AsideDevlog - Third on mobile, first in order on desktop */}
-      <div className="order-2 md:order-1 w-full md:w-3/12">
+      <div className="order-2 md:order-1 w-full md:w-2/12">
         <AsideDevlog />
       </div>
     </div>
