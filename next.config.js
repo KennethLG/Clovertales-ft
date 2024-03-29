@@ -7,6 +7,7 @@ const nextConfig = {
     domains: [
       `${process.env.NEXT_PUBLIC_AWS_CDN}`.replace("https://", ""),
       "picsum.photos",
+      "trello.com"
     ],
   },
   
