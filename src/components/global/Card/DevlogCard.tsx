@@ -45,6 +45,7 @@ export const DevlogCard = ({
         )}
       </p>
       <div className="mt-2 space-x-2 flex flex-col h-auto">
+        <h6 className="text-base leading-5 my-2">Attachments:</h6>
         {attachments && attachments.map((attachment, index) => (
           <div key={index} className="w-16 relative">
             <Image
