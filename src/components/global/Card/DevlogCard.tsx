@@ -44,9 +44,9 @@ export const DevlogCard = ({
           </button>
         )}
       </p>
-      <div className="flex mt-2 space-x-2">
+      <div className="mt-2 space-x-2 flex flex-col h-auto">
         {attachments && attachments.map((attachment, index) => (
-          <div key={index} className="w-16 h-16 relative">
+          <div key={index} className="w-16 relative">
             <Image
               src={attachment.url}
               alt={`Attachment ${index + 1}`}

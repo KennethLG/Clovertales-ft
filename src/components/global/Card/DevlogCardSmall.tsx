@@ -32,9 +32,9 @@ export const DevlogCardSmall = ({
           </button>
         )}
       </p>
-      <div className="flex mt-1 space-x-2">
+      <div className="flex flex-col h-auto mt-1 space-x-2">
         {attachments && attachments.slice(0, 3).map((attachment, index) => (
-          <div key={index} className="w-10 h-10 relative">
+          <div key={index} className="w-10 relative">
             <Image
               src={attachment.url}
               alt={`Attachment ${index + 1}`}
