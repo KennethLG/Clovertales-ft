@@ -34,6 +34,7 @@ export const DevlogList: React.FC<TasksListProps> = ({
     try {
       const response = await fetch(url);
       const data = await response.json();
+      console.log("🚀 ~ fetchTasks ~ data:", data)
       if (!response.ok) {
         throw new Error(data.message || "Failed to fetch posts");
       }
@@ -77,6 +78,9 @@ export const DevlogList: React.FC<TasksListProps> = ({
           description={task.description}
           attachments={task.attachments}
           createdAt={task.createdAt}
+          timing={task.timing}
+          type={task.type}
+          level={task.level}
           status={"done"}
         />
       ))}
